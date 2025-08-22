@@ -1,0 +1,86 @@
+/* Контейнер поиска */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 70vh;
+    text-align: center;
+}
+
+/* Панель поиска */
+.search-panel {
+    margin-top: 40px;
+}
+
+/* Заголовок поиска */
+.search-container h1 {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+/* Форма поиска */
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Поле ввода */
+.search-input {
+    padding: 20px;
+    width: 650px;
+    font-size: 25px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Эффект фокуса на поле ввода */
+.search-input:focus {
+    border-color: #065F46;
+}
+
+/* Кнопка поиска */
+.search-button {
+    background-color: #065F46;
+    border: none;
+    padding: 20px;
+    margin-left: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+/* Иконка внутри кнопки */
+.search-button i {
+    color: #fff;
+    font-size: 26px;
+}
+
+/* Эффект увеличения кнопки */
+.search-button:hover {
+    transform: scale(1.2);
+}
+
+/* Контейнер с результатами */
+.result-container {
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+/* Убираем стандартные отступы у списка */
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+/* Стили ссылок в результатах поиска */
+ul li a {
+    text-decoration: none;
+    color: #065F46;
+}
+
+/* Эффект наведения на ссылки */
+ul li a:hover {
+    text-decoration: underline;
+}

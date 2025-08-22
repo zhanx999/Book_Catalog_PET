@@ -1,0 +1,35 @@
+{% extends 'books/base.html' %}
+
+<!-- Импортируем хранилище static-файлов -->
+{% load static %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+<!-- Добавляем новый блок css -->
+{% block extra_css %} <link rel="stylesheet" href="{% static 'books/css/book_detail.css' %}">{% endblock %}
+
+{% block content %}
+    <div class="book-detail">
+        <!-- Подключаем изображение -->
+        <img class="book-cover" src="{% static 'books/img/' %}{{ book.img_src }}" alt="{{ book.title }}">
+
+        <div class="book-info">
+            <!-- Добавляем класс capitalize для озаглавия первых букв текста -->
+            <h1 class="capitalize">{{ book.title }}</h1>
+            <p class="capitalize"><strong>Автор:</strong> {{ book.author.name }}</p>
+
+            <p><strong>Дата публикации:</strong> {{ book.publication_date }}</p>
+            <p>{{ book.details.description }}</p>
+        </div>
+    </div>
+
+    <div class="author-detail">
+        <!-- Подключаем изображение -->
+        <img class="author-photo" src="{% static 'books/img/' %}{{ book.author.img_src }}" alt="{{ book.author.name }}">
+
+        <div class="author-info">
+            <h3>Об авторе</h3>
+            <p>{{ book.author.bio }}</p>
+        </div>
+    </div>
+{% endblock %}

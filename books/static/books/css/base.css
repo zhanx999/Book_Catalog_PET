@@ -1,0 +1,56 @@
+/* Подключаем шрифт Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Общие стили для body и заголовка */
+body, .header {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Оформление плейсхолдера в input */
+input::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    color: #888;
+}
+
+/* Задаем цвет фона для всей страницы */
+body {
+    background-color: #59b18e;
+}
+
+/* Оформление заголовка сайта */
+header {
+    font-size: 35px !important;
+    background-color: #065F46; /* Темно-зеленый */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 110px;
+    color: #c4d684; /* Светло-зеленый */
+}
+/* Стили навигационных ссылок в header */
+header nav a {
+    margin: 0 15px;
+    color: #c4d684;
+    text-decoration: none;
+}
+
+/* Эффект наведения на ссылки */
+header nav a:hover {
+    border-bottom: 1px solid #c4d684;
+    color: #c4d684;
+}  
+
+/* Основной контейнер */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    color: #2e3319; /* Темно-зеленый текст */
+}
+
+/* Класс для автоматического изменения регистра */
+.capitalize {
+    text-transform: capitalize;
+}

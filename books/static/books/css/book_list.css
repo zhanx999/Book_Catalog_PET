@@ -1,0 +1,63 @@
+.book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Карточка книги */
+.book-card {
+    display: flex;
+    align-items: flex-start;
+    text-decoration: none;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: inherit;
+}
+
+/* Эффект увеличения при наведении */
+.book-card:hover {          
+    transform: scale(1.02);
+}
+
+/* Изображение книги в карточке */
+.book-card img {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+/* Контейнер информации о книге */
+.book-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Заголовок книги */
+.book-info h2 {
+    margin: 0 0 5px;
+    font-size: 30px;
+}
+
+/* Ссылка в заголовке книги */
+.book-info h2 a {
+    text-decoration: none;
+    color: #065F46;
+    transition: color 0.3s;
+}
+
+/* Эффект наведения на ссылку */
+.book-info h2 a:hover {
+    color: #59b18e;
+}
+
+/* Описание книги */
+.book-info p {
+    margin: 5px 0;
+    font-size: 20px;
+    color: #444;
+}

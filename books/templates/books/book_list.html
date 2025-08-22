@@ -1,0 +1,29 @@
+{% extends 'books/base.html' %}
+
+<!-- Импортируем хранилище static-файлов -->
+{% load static %}
+
+{% block title %}Каталог книг{% endblock %}
+
+<!-- Добавляем новый блок css -->
+{% block extra_css %}<link rel="stylesheet" href="{% static 'books/css/book_list.css' %}">{% endblock %}
+
+{% block content %}
+    <div class="book-list">
+        {% for book in books %}
+            <a href="{% url 'book_detail' book.id %}" class="book-card">
+
+                <!-- Подключаем изображение -->
+                <img src="{% static 'books/img/' %}{{ book.img_src }}" alt="{{ book.title }}" width="150">
+
+                <div class="book-info">
+                    <!-- Добавляем класс capitalize для озаглавия первых букв текста -->
+                    <h2 class="capitalize">{{ book.title }}</h2>
+                    <p class="capitalize"><strong>Автор:</strong> {{ book.author.name }}</p>
+
+                    <p>{{ book.short_desc }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

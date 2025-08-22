@@ -1,0 +1,44 @@
+/* Оформление блока с деталями книги и автора */
+.book-detail, .author-detail {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff; /* Белый фон */
+    padding: 20px;
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Стили для изображения книги и фото автора */
+.book-cover, .author-photo {
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+/* Размер изображения книги */
+.book-cover {
+    width: 400px;
+    height: auto;
+}
+/* Размер фотографии автора */
+.author-photo {
+    width: 300px;
+    height: auto;
+}
+
+/* Контейнер для информации о книге и авторе */
+.book-info, .author-info {
+    flex: 1;
+}
+
+/* Стили для заголовков */
+h1, h3 {
+    margin: 0 0 10px;
+}
+
+/* Стили для параграфов */
+p {
+    line-height: 1.5;
+    margin: 5px 0;
+}
