@@ -7,7 +7,7 @@ class Author(models.Model):
     years_of_age = models.CharField(max_length=50)
     bio = models.TextField()
     works = models.TextField(blank=True,null=True)
-    number = models.IntegerField()
+    number = models.IntegerField(null=True, blank=True)
 
     class Meta:
         db_table = 'author'

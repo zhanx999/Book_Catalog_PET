@@ -1,6 +1,23 @@
-<h2>Регистрация</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Зарегистрироваться</button>
-</form>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <!-- Подключаем общий CSS -->
+    <link rel="stylesheet" href="{% static 'books/css/base.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Регистрация</h2>
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <p class="signup-link">Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+    </div>
+</body>
+</html>

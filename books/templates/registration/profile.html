@@ -1,5 +1,32 @@
+{% extends 'books/base.html' %}
+{% load static %}
 
-<p>Добро пожаловать, {{ user.username }}!
-    password : {{ user.password }}
-</p>
+{% block title %}Профиль{% endblock %}
 
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="{% static 'books/css/base.css' %}">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-card">
+            <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Добро пожаловать в каталог книг!</strong></p>
+
+            <form class="logout" method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit"><i class="fas fa-sign-out-alt"></i> Выйти</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

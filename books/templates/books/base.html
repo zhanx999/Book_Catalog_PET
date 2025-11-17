@@ -19,12 +19,17 @@
 </head>
 <body>
     <header>
-        <h1>Каталог книг</h1>
-        <nav>
-            <a href="{% url 'book_list' %}">Главная</a>
-            <a href="{% url 'search' %}">Поиск книги</a>
-        </nav>
-    </header>
+    <h1>Каталог книг</h1>
+    <nav>
+        <a href="{% url 'book_list' %}">Главная</a>
+        <a href="{% url 'search' %}">Поиск книги</a>
+        <a href="{%url 'profile'%}">Профиль</a>
+    </nav>
+    <form class="logout" method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit"><i class="fas fa-sign-out-alt"></i> Выйти</button>
+    </form>
+</header>
 
     <div class="container">
         {% block content %}{% endblock %}

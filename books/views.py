@@ -4,9 +4,15 @@ from django.db.models import Q
 from .models import Book
 from .forms import *
 from django.contrib.auth import login
+from django.contrib.auth.views import LogoutView
 from django.contrib.auth.forms import UserCreationForm
 
 from django.contrib.auth.decorators import login_required
+
+def home_redirect(request):
+    if request.user.is_authenticated:
+        return redirect('book_list')
+    return redirect('login')
 
 @login_required
 def book_list(request): 
@@ -15,7 +21,7 @@ def book_list(request):
     # Передаем ее в еще не существующий шаблон book_list.html
     return render(request, 'books/book_list.html', {'books': books})
 
-
+@login_required
 def book_detail(request, book_id): 
     # Получаем информацию о книге по id, если не найдено, на странице возникает ошибка 404 Not found
     book = get_object_or_404(Book, id=book_id) 
