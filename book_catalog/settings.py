@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&=!16dymi##c00$b8t7z@@z5%!_ef+#iw0d9pw)03*vpp@vzjx'
+SECRET_KEY = 'django-insecure-&=!16dymi##c00$b8t7z@@z5%!_ef+#iw0d9pw)03*vpp@vzjx'#плохой пример
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'book_catalog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'book_catalog_db',
+        'USER': 'postgres',
+        'PASSWORD': '123',
+        'HOST': 'localhost',  # если локально
+        'PORT': '5432',
     }
 }
 
